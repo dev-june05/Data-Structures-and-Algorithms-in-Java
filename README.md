@@ -1,43 +1,47 @@
-#  Data Structures and Algorithms in Java
+# Data Structures and Algorithms in Java
 
 Welcome to my repository for implementing classic **Data Structures and Algorithms (DSA)** in Java.  
 This project is a work-in-progress and will gradually grow to include a wide variety of fundamental data structures and algorithms with clean, readable code.
 
-##  Structure
+## 📁 Structure
 
 Each problem or concept is stored in a separate Java file. Files are named clearly, such as:
 
 - `Problem_1.java` — Implementation of the **Linked List ADT** with basic operations like insertion, deletion, size, and traversal.
+- `Problem_1_ArrayList.java` — Menu-driven program to perform various **ArrayList operations** such as insertion, deletion, search, update, reverse, and more.
 
-##  Goals of this Repository
+## 🚀 Goals of this Repository
 
-- Practice and reinforce DSA concepts in Java
-- Build reusable code snippets for competitive programming and interviews
-- Share clean, commented implementations for learners and contributors
+- Practice and reinforce DSA concepts in Java  
+- Build reusable code snippets for competitive programming and interviews  
+- Share clean, commented implementations for learners and contributors  
 
-##  Current Topics
+## ✅ Current Topics
 
-- [x] Singly Linked List (`Problem_1`)
+- [x] Singly Linked List (`Problem_1`)  
+  - Operations: insert at end, insert at beginning, remove first, size, print  
+- [x] ArrayList Operations (`Problem_1_ArrayList`)  
+  - Menu-driven program: insertion, deletion, search, update, reverse, display, size, clear  
 
-##  Upcoming Topics
+## 🛠️ Upcoming Topics
 
-- [ ] Stack and Queue (Array & Linked List implementation)
-- [ ] Doubly Linked List
-- [ ] Trees (Binary Tree, BST, Traversals)
-- [ ] Sorting Algorithms (Bubble, Merge, Quick, etc.)
-- [ ] Searching Algorithms (Binary Search, Linear Search)
-- [ ] Graphs and their traversal (DFS, BFS)
-- [ ] Recursion and Backtracking
+- [ ] Stack and Queue (Array & Linked List implementation)  
+- [ ] Doubly Linked List  
+- [ ] Trees (Binary Tree, BST, Traversals)  
+- [ ] Sorting Algorithms (Bubble, Merge, Quick, etc.)  
+- [ ] Searching Algorithms (Binary Search, Linear Search)  
+- [ ] Graphs and their traversal (DFS, BFS)  
+- [ ] Recursion and Backtracking  
 
-##  Language Used
+## 📚 Language Used
 
 - Java (JDK 17+ recommended)
 
-##  Contributing
+## 🤝 Contributing
 
 Pull requests are welcome. If you have suggestions for improvements or want to contribute another DSA problem, feel free to fork and open a PR.
 
-##  License
+## 📄 License
 
 This repository is open source and available under the [MIT License](LICENSE).
 
