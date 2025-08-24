@@ -1,50 +1,47 @@
 # Data Structures and Algorithms in Java
 
 Welcome to my repository for implementing classic **Data Structures and Algorithms (DSA)** in Java.  
-This project is a work-in-progress and will gradually grow to include a wide variety of fundamental data structures and algorithms with clean, readable code.
+This project is a work-in-progress that will gradually grow to include a wide variety of fundamental data structures and algorithms, with clean, readable code.
 
-## 📁 Structure
+##  Structure
 
-Each problem or concept is stored in a separate Java file. Files are named clearly, such as:
+Each data structure or algorithm is implemented in its own Java file. Current files include:
 
-- `Problem_1.java` — Implementation of the **Linked List ADT** with basic operations like insertion, deletion, size, and traversal.
-- `Problem_1_ArrayList.java` — Menu-driven program to perform various **ArrayList operations** such as insertion, deletion, search, update, reverse, and more.
+- `Problem_1.java` — **Linked List ADT** implementation: insertion (end & beginning), removal of first node, size calculation, and traversal.
+- `Problem_1_ArrayList.java` — **ArrayList operations (interactive)**: insertion, deletion, search, update, reverse, display, size, clear.
+- `ImplementationStack.java` — Basic **Stack** implementation.
+- `ImplementationQueue.java` — Basic **Queue** implementation.
+- `StackusingLL.java` — **Stack using Linked List** approach.
 
-## 🚀 Goals of this Repository
+##  Goals of this Repository
 
 - Practice and reinforce DSA concepts in Java  
 - Build reusable code snippets for competitive programming and interviews  
-- Share clean, commented implementations for learners and contributors  
+- Provide clean, commented implementations for learners and contributors  
 
-## ✅ Current Topics
+##  Current Topics
 
-- [x] Singly Linked List (`Problem_1`)  
+- [x] **Singly Linked List** (`Problem_1.java`)  
   - Operations: insert at end, insert at beginning, remove first, size, print  
-- [x] ArrayList Operations (`Problem_1_ArrayList`)  
-  - Menu-driven program: insertion, deletion, search, update, reverse, display, size, clear  
+- [x] **ArrayList Operations** (`Problem_1_ArrayList.java`)  
+  - Interactive menu: insertion, deletion, search, update, reverse, display, size, clear  
+- [x] **Stack** (`ImplementationStack.java`)  
+- [x] **Queue** (`ImplementationQueue.java`)  
+- [x] **Stack using Linked List** (`StackusingLL.java`)  
 
-## 🛠️ Upcoming Topics
 
-- [ ] Stack and Queue (Array & Linked List implementation)  
-- [ ] Doubly Linked List  
-- [ ] Trees (Binary Tree, BST, Traversals)  
-- [ ] Sorting Algorithms (Bubble, Merge, Quick, etc.)  
-- [ ] Searching Algorithms (Binary Search, Linear Search)  
-- [ ] Graphs and their traversal (DFS, BFS)  
-- [ ] Recursion and Backtracking  
-
-## 📚 Language Used
+##  Language Used
 
 - Java (JDK 17+ recommended)
 
-## 🤝 Contributing
+##  Contributing
 
-Pull requests are welcome. If you have suggestions for improvements or want to contribute another DSA problem, feel free to fork and open a PR.
+Pull requests are welcome! Feel free to fork and submit improvements or new DS implementations.
 
-## 📄 License
+##  License
 
-This repository is open source and available under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-> _This repo is being actively developed and updated. Stay tuned for more additions!_
+> _This repo is being actively developed with more additions coming soon!_
