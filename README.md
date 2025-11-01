@@ -1,47 +1,124 @@
-# Data Structures and Algorithms in Java
+📘 Data Structures and Algorithms in Java
 
-Welcome to my repository for implementing classic **Data Structures and Algorithms (DSA)** in Java.  
-This project is a work-in-progress that will gradually grow to include a wide variety of fundamental data structures and algorithms, with clean, readable code.
+Welcome to my repository for implementing classic Data Structures and Algorithms (DSA) in Java.
+This repository serves as a hands-on learning space to practice, understand, and master the fundamental data structures and algorithms essential for coding interviews, competitive programming, and academic learning.
 
-##  Structure
+📂 Repository Structure
 
-Each data structure or algorithm is implemented in its own Java file. Current files include:
+Each topic or algorithm is implemented in its own Java file for modularity and clarity.
+Some algorithms also include a corresponding .txt file explaining the logic, complexity, or dry run.
 
-- `Problem_1.java` — **Linked List ADT** implementation: insertion (end & beginning), removal of first node, size calculation, and traversal.
-- `Problem_1_ArrayList.java` — **ArrayList operations (interactive)**: insertion, deletion, search, update, reverse, display, size, clear.
-- `ImplementationStack.java` — Basic **Stack** implementation.
-- `ImplementationQueue.java` — Basic **Queue** implementation.
-- `StackusingLL.java` — **Stack using Linked List** approach.
+🧮 Algorithms & Data Structures
+🔹 Searching
 
-##  Goals of this Repository
+LinearSearch.java
 
-- Practice and reinforce DSA concepts in Java  
-- Build reusable code snippets for competitive programming and interviews  
-- Provide clean, commented implementations for learners and contributors  
+BinarySearch.java
 
-##  Current Topics
+BinarySearchTree.java
 
-- [x] **Singly Linked List** (`Problem_1.java`)  
-  - Operations: insert at end, insert at beginning, remove first, size, print  
-- [x] **ArrayList Operations** (`Problem_1_ArrayList.java`)  
-  - Interactive menu: insertion, deletion, search, update, reverse, display, size, clear  
-- [x] **Stack** (`ImplementationStack.java`)  
-- [x] **Queue** (`ImplementationQueue.java`)  
-- [x] **Stack using Linked List** (`StackusingLL.java`)  
+Docs: BinarySearch.txt
 
+🔹 Sorting
 
-##  Language Used
+BubbleSort.java
 
-- Java (JDK 17+ recommended)
+SelectionSort.java
 
-##  Contributing
+InsertionSort.java
 
-Pull requests are welcome! Feel free to fork and submit improvements or new DS implementations.
+MergeSort.java
 
-##  License
+QuickSort.java
 
-This project is licensed under the [MIT License](LICENSE).
+Docs: BubbleSort.txt, SelectionSort.txt, InsertionSort.txt, MergeSort.txt, ImplementationSort.txt
 
----
+🔹 Linked List
 
-> _This repo is being actively developed with more additions coming soon!_
+Problem_1.java — Basic Singly Linked List (insert, delete, size, print)
+
+Problem_1_updated.java — Updated and optimized Linked List version
+
+🔹 ArrayList Operations
+
+Problem_1_ArrayList.java — Interactive ArrayList operations (insert, delete, search, update, reverse, display, size, clear)
+
+🔹 Stack & Queue
+
+ImplementationStack.java — Stack using array
+
+StackusingLL.java — Stack using Linked List
+
+ImplementationQueue.java — Basic Queue using array
+
+🔹 Miscellaneous
+
+InsSort.java — Alternate insertion sort implementation (experimental)
+
+ImplementationSort.txt — Notes/documentation for sort implementations
+
+🧠 Concepts Covered
+
+Searching Algorithms
+
+Sorting Algorithms
+
+Linked List Implementation
+
+ArrayList Manipulation
+
+Stack and Queue Data Structures
+
+Binary Search Tree
+
+🛠️ Tech Stack
+
+Language: Java
+
+Recommended JDK: 17 or higher
+
+IDE: IntelliJ IDEA / Eclipse / VS Code (any Java-compatible IDE)
+
+🚀 Upcoming Additions
+
+Doubly Linked List
+
+Circular Queue
+
+Recursion-based algorithms
+
+Tree Traversals (Inorder, Preorder, Postorder)
+
+Graph Algorithms (BFS, DFS, Dijkstra’s)
+
+Dynamic Programming
+
+🤝 Contributing
+
+Contributions are always welcome!
+To contribute:
+
+Fork this repository
+
+Create a new branch (feature-name)
+
+Commit your changes with clear messages
+
+Push and open a Pull Request
+
+Please ensure your code:
+
+Is properly formatted
+
+Has clear comments
+
+Compiles and runs without errors
+
+📜 License
+
+This project is licensed under the MIT License.
+Feel free to use, modify, and share the code with proper credit.
+
+⭐ Support
+
+If you find this repository helpful, please star ⭐ it to show your support and help others discover
