@@ -1,0 +1,126 @@
+MERGE SORT ALGORITHM EXPLANATION
+================================
+
+OVERVIEW:
+--------
+Merge Sort is a divide-and-conquer sorting algorithm that works by recursively dividing the array into smaller subarrays, sorting them, and then merging them back together. It guarantees O(n log n) time complexity in all cases and is a stable sorting algorithm.
+
+HOW IT WORKS:
+------------
+1. DIVIDE: Split the array into two halves recursively until each subarray contains only one element
+2. CONQUER: Sort the individual elements (trivially sorted when there's only one element)
+3. MERGE: Combine the sorted subarrays back together in the correct order
+
+ALGORITHM STEPS:
+---------------
+1. If the array has only one element, it's already sorted - return it
+2. Find the middle point of the array
+3. Recursively sort the left half of the array
+4. Recursively sort the right half of the array
+5. Merge the two sorted halves into a single sorted array
+
+MERGE FUNCTION:
+--------------
+The merge function combines two sorted arrays:
+1. Compare elements from both arrays
+2. Take the smaller element and add it to the result
+3. Move to the next element in the array that contributed the smaller element
+4. Repeat until one array is exhausted
+5. Add remaining elements from the other array
+
+TIME COMPLEXITY:
+---------------
+- Best Case: O(n log n)
+- Average Case: O(n log n)
+- Worst Case: O(n log n)
+- The algorithm always divides the array in half, creating log n levels of recursion
+- At each level, we merge n elements, resulting in O(n log n)
+
+SPACE COMPLEXITY:
+----------------
+- O(n) - requires additional space for temporary arrays during merging
+- This makes it not in-place sorting
+
+CHARACTERISTICS:
+---------------
+- STABLE: Equal elements maintain their relative order
+- NOT IN-PLACE: Requires additional memory
+- CONSISTENT: Always O(n log n) regardless of input
+- GOOD FOR: Large datasets, external sorting, when stability is important
+- NOT GOOD FOR: Memory-constrained environments
+
+EXAMPLE:
+--------
+Array: [38, 27, 43, 3, 9, 82, 10]
+
+Step 1 - Divide:
+[38, 27, 43, 3] | [9, 82, 10]
+
+Step 2 - Further divide:
+[38, 27] | [43, 3] | [9, 82] | [10]
+
+Step 3 - Further divide:
+[38] | [27] | [43] | [3] | [9] | [82] | [10]
+
+Step 4 - Merge pairs:
+[27, 38] | [3, 43] | [9, 82] | [10]
+
+Step 5 - Merge:
+[3, 27, 38, 43] | [9, 10, 82]
+
+Step 6 - Final merge:
+[3, 9, 10, 27, 38, 43, 82]
+
+PSEUDOCODE:
+----------
+mergeSort(arr, left, right):
+    if left < right:
+        mid = (left + right) / 2
+        mergeSort(arr, left, mid)
+        mergeSort(arr, mid + 1, right)
+        merge(arr, left, mid, right)
+
+merge(arr, left, mid, right):
+    Create temp arrays L[] and R[]
+    Copy data to temp arrays
+    i = 0, j = 0, k = left
+    while i < L.length and j < R.length:
+        if L[i] <= R[j]:
+            arr[k] = L[i]
+            i++
+        else:
+            arr[k] = R[j]
+            j++
+        k++
+    Copy remaining elements of L[] and R[]
+
+ADVANTAGES:
+----------
+1. Guaranteed O(n log n) performance
+2. Stable sorting algorithm
+3. Predictable performance
+4. Good for large datasets
+5. Can be parallelized easily
+6. Works well with linked lists
+
+DISADVANTAGES:
+-------------
+1. Requires O(n) extra space
+2. Not as cache-friendly as quicksort
+3. More complex implementation than simple sorts
+4. Overhead of recursion
+
+USE CASES:
+----------
+- Large datasets where consistent performance is important
+- When stability is required
+- External sorting (sorting data that doesn't fit in memory)
+- Parallel processing environments
+- When worst-case O(n log n) performance is needed
+
+COMPARISON WITH OTHER SORTS:
+---------------------------
+- vs Quick Sort: More consistent but uses more memory
+- vs Heap Sort: Stable but not in-place
+- vs Insertion Sort: Much better for large arrays, worse for small arrays
+- vs Bubble Sort: Dramatically better performance

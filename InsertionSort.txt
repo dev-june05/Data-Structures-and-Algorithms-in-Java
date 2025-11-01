@@ -1,0 +1,140 @@
+INSERTION SORT ALGORITHM EXPLANATION
+=====================================
+
+OVERVIEW:
+---------
+Insertion Sort is a simple, stable, in-place sorting algorithm that builds the final sorted array one element at a time. It's similar to how you might sort playing cards in your hand.
+
+HOW IT WORKS:
+-------------
+1. The algorithm divides the array into two parts:
+   - Sorted part (initially empty or contains first element)
+   - Unsorted part (rest of the array)
+
+2. For each element in the unsorted part:
+   - Pick the first element from unsorted part
+   - Compare it with elements in the sorted part (from right to left)
+   - Shift all elements greater than the current element one position to the right
+   - Insert the current element in its correct position
+
+STEP-BY-STEP EXAMPLE:
+--------------------
+Let's sort the array: [64, 34, 25, 12, 22, 11, 90]
+
+Initial array: [64, 34, 25, 12, 22, 11, 90]
+                ↑
+              sorted
+
+Pass 1: Element 34
+- Compare 34 with 64 (in sorted part)
+- 34 < 64, so shift 64 to the right
+- Insert 34 at position 0
+Result: [34, 64, 25, 12, 22, 11, 90]
+         ↑────↑
+       sorted
+
+Pass 2: Element 25
+- Compare 25 with 64: 25 < 64, shift 64 right
+- Compare 25 with 34: 25 < 34, shift 34 right
+- Insert 25 at position 0
+Result: [25, 34, 64, 12, 22, 11, 90]
+         ↑───────↑
+       sorted
+
+Pass 3: Element 12
+- Compare 12 with 64: 12 < 64, shift 64 right
+- Compare 12 with 34: 12 < 34, shift 34 right
+- Compare 12 with 25: 12 < 25, shift 25 right
+- Insert 12 at position 0
+Result: [12, 25, 34, 64, 22, 11, 90]
+         ↑───────────↑
+       sorted
+
+Pass 4: Element 22
+- Compare 22 with 64: 22 < 64, shift 64 right
+- Compare 22 with 34: 22 < 34, shift 34 right
+- Compare 22 with 25: 22 < 25, shift 25 right
+- Compare 22 with 12: 22 > 12, stop
+- Insert 22 at position 1
+Result: [12, 22, 25, 34, 64, 11, 90]
+         ↑───────────────↑
+       sorted
+
+Pass 5: Element 11
+- Compare 11 with 64: 11 < 64, shift 64 right
+- Compare 11 with 34: 11 < 34, shift 34 right
+- Compare 11 with 25: 11 < 25, shift 25 right
+- Compare 11 with 22: 11 < 22, shift 22 right
+- Compare 11 with 12: 11 < 12, shift 12 right
+- Insert 11 at position 0
+Result: [11, 12, 22, 25, 34, 64, 90]
+         ↑───────────────────↑
+       sorted
+
+Pass 6: Element 90
+- Compare 90 with 64: 90 > 64, stop
+- Insert 90 at position 6 (already in correct position)
+Result: [11, 12, 22, 25, 34, 64, 90]
+         ↑───────────────────────↑
+       sorted
+
+ALGORITHM PSEUDOCODE:
+--------------------
+for i = 1 to n-1:
+    key = arr[i]           // Element to be inserted
+    j = i - 1              // Index of last element in sorted part
+    
+    // Move elements greater than key one position ahead
+    while j >= 0 and arr[j] > key:
+        arr[j + 1] = arr[j]
+        j = j - 1
+    
+    arr[j + 1] = key       // Insert key in correct position
+
+TIME COMPLEXITY:
+---------------
+- Best Case: O(n) - when array is already sorted
+- Average Case: O(n²) - average number of comparisons and shifts
+- Worst Case: O(n²) - when array is sorted in reverse order
+
+SPACE COMPLEXITY:
+----------------
+- O(1) - only uses a constant amount of extra space
+
+CHARACTERISTICS:
+---------------
+✓ Stable: Equal elements maintain their relative order
+✓ In-place: Sorts the array without using additional space
+✓ Online: Can sort a list as it receives it
+✓ Adaptive: Efficient for data sets that are already substantially sorted
+✓ Simple: Easy to understand and implement
+
+WHEN TO USE:
+-----------
+- Small datasets
+- Nearly sorted data
+- When you need a stable sort
+- When simplicity is more important than efficiency
+- As a building block for more complex algorithms (like Timsort)
+
+ADVANTAGES:
+----------
+- Simple implementation
+- Efficient for small datasets
+- Stable sorting
+- In-place sorting
+- Online algorithm
+- Adaptive performance
+
+DISADVANTAGES:
+-------------
+- Inefficient for large datasets
+- O(n²) time complexity in worst case
+- Not suitable for real-time applications with large data
+
+COMPARISON WITH OTHER SORTS:
+---------------------------
+- vs Bubble Sort: More efficient, fewer swaps
+- vs Selection Sort: More comparisons but fewer swaps
+- vs Merge Sort: Simpler but much slower for large data
+- vs Quick Sort: More predictable but slower average case

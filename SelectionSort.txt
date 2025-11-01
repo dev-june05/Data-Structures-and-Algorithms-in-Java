@@ -1,0 +1,75 @@
+SELECTION SORT ALGORITHM EXPLANATION
+====================================
+
+Selection sort is a simple comparison-based sorting algorithm that works by repeatedly finding the minimum (or maximum) element from the unsorted portion of the array and moving it to the beginning (or end) of the sorted portion.
+
+HOW IT WORKS:
+1. Find minimum - Scan the entire unsorted portion to find the smallest element
+2. Swap - Move this smallest element to the correct position in the sorted portion
+3. Repeat - Repeat the process for the remaining unsorted elements
+4. Continue - Keep doing this until the entire array is sorted
+
+VISUAL EXAMPLE:
+Original array: [64, 34, 25, 12, 22, 11, 90]
+
+Pass 1: Find min in [64, 34, 25, 12, 22, 11, 90] → min=11 at index 5
+        Swap 64 and 11: [11, 34, 25, 12, 22, 64, 90]
+
+Pass 2: Find min in [34, 25, 12, 22, 64, 90] → min=12 at index 3
+        Swap 34 and 12: [11, 12, 25, 34, 22, 64, 90]
+
+Pass 3: Find min in [25, 34, 22, 64, 90] → min=22 at index 4
+        Swap 25 and 22: [11, 12, 22, 34, 25, 64, 90]
+
+Pass 4: Find min in [34, 25, 64, 90] → min=25 at index 4
+        Swap 34 and 25: [11, 12, 22, 25, 34, 64, 90]
+
+Pass 5: Find min in [34, 64, 90] → min=34 at index 4
+        Already in correct position: [11, 12, 22, 25, 34, 64, 90]
+
+Pass 6: Find min in [64, 90] → min=64 at index 5
+        Already in correct position: [11, 12, 22, 25, 34, 64, 90]
+
+ALGORITHM PSEUDOCODE:
+for i = 0 to n-1:
+    minIndex = i
+    for j = i+1 to n-1:
+        if arr[j] < arr[minIndex]:
+            minIndex = j
+    swap arr[i] and arr[minIndex]
+
+TIME COMPLEXITY:
+- Best Case: O(n²) - even if array is sorted, we still scan all elements
+- Average Case: O(n²) - always performs n(n-1)/2 comparisons
+- Worst Case: O(n²) - same as best case, always quadratic
+
+SPACE COMPLEXITY:
+- O(1) - only uses a constant amount of extra space for variables
+
+ADVANTAGES:
+- Simple to understand and implement
+- Makes minimum number of swaps (at most n-1 swaps)
+- In-place sorting (doesn't require extra memory)
+- Good for small datasets
+- Predictable performance (always O(n²))
+
+DISADVANTAGES:
+- O(n²) time complexity makes it inefficient for large datasets
+- Not stable (relative order of equal elements may change)
+- Always performs the same number of comparisons regardless of input
+- Poor performance compared to more advanced algorithms
+
+WHEN TO USE:
+- Educational purposes to understand sorting concepts
+- Small datasets (n < 50)
+- When memory is very limited
+- When you need to minimize the number of swaps
+- As a building block for more complex algorithms
+
+COMPARISON WITH OTHER SORTS:
+- vs Bubble Sort: Fewer swaps but same O(n²) complexity
+- vs Insertion Sort: More comparisons but fewer swaps
+- vs Quick Sort: Much slower but simpler and more predictable
+- vs Merge Sort: Slower but uses less memory
+
+Selection sort is excellent for learning sorting concepts but should generally be avoided in production code where performance matters.

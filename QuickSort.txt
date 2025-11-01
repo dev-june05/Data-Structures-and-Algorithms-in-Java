@@ -1,0 +1,150 @@
+QUICK SORT ALGORITHM EXPLANATION
+=================================
+
+OVERVIEW:
+--------
+Quick Sort is a highly efficient divide-and-conquer sorting algorithm that works by selecting a 'pivot' element and partitioning the array around it. It's one of the most widely used sorting algorithms due to its excellent average-case performance and in-place sorting capability. Quick Sort has O(n log n) average time complexity and O(n²) worst-case complexity.
+
+HOW IT WORKS:
+------------
+1. PIVOT SELECTION: Choose a pivot element from the array (usually first, last, or middle element)
+2. PARTITIONING: Rearrange the array so all elements smaller than pivot come before it, and all elements greater come after
+3. RECURSION: Recursively apply Quick Sort to the sub-arrays before and after the pivot
+4. COMBINE: Since partitioning is done in-place, no additional combining step is needed
+
+ALGORITHM STEPS:
+---------------
+1. Choose a pivot element from the array
+2. Partition the array around the pivot (Lomuto or Hoare partitioning)
+3. Recursively sort the left sub-array (elements < pivot)
+4. Recursively sort the right sub-array (elements > pivot)
+5. The array is now sorted (pivot is in its final position)
+
+PARTITIONING (LOMUTO SCHEME):
+-----------------------------
+1. Choose the last element as pivot
+2. Initialize i = low - 1 (index of smaller element)
+3. For each element from low to high-1:
+   - If current element <= pivot, increment i and swap arr[i] with arr[j]
+4. Swap arr[i+1] with arr[high] (put pivot in correct position)
+5. Return the pivot's final position
+
+TIME COMPLEXITY:
+---------------
+- Best Case: O(n log n) - when pivot always divides array into equal halves
+- Average Case: O(n log n) - pivot selection is reasonably balanced
+- Worst Case: O(n²) - when pivot is always the smallest or largest element
+- The performance heavily depends on pivot selection strategy
+
+SPACE COMPLEXITY:
+----------------
+- Average Case: O(log n) - height of recursion tree
+- Worst Case: O(n) - when array is already sorted or reverse sorted
+- In-place sorting (modifies original array)
+
+CHARACTERISTICS:
+---------------
+- NOT STABLE: Equal elements may not maintain their relative order
+- IN-PLACE: Sorts without requiring additional memory (except recursion stack)
+- EFFICIENT: One of the fastest sorting algorithms in practice
+- ADAPTIVE: Performance depends on input data characteristics
+- GOOD FOR: Large datasets, general-purpose sorting
+- NOT GOOD FOR: When stability is required, worst-case O(n²) is unacceptable
+
+EXAMPLE:
+--------
+Array: [64, 34, 25, 12, 22, 11, 90]
+Pivot strategy: Always choose last element
+
+Initial: [64, 34, 25, 12, 22, 11, 90] (pivot=90)
+After partition: [64, 34, 25, 12, 22, 11, 90] (pivot at position 6)
+
+Left sub-array: [64, 34, 25, 12, 22, 11] (pivot=11)
+After partition: [11, 34, 25, 12, 22, 64] (pivot at position 0)
+
+Right sub-array: [34, 25, 12, 22, 64] (pivot=64)
+After partition: [34, 25, 12, 22, 64] (pivot at position 4)
+
+Continue recursively...
+Final result: [11, 12, 22, 25, 34, 64, 90]
+
+PSEUDOCODE:
+----------
+quickSort(arr, low, high):
+    if low < high:
+        pivotIndex = partition(arr, low, high)
+        quickSort(arr, low, pivotIndex - 1)
+        quickSort(arr, pivotIndex + 1, high)
+
+partition(arr, low, high):  // Lomuto scheme
+    pivot = arr[high]
+    i = low - 1
+    
+    for j = low to high - 1:
+        if arr[j] <= pivot:
+            i++
+            swap(arr[i], arr[j])
+    
+    swap(arr[i + 1], arr[high])
+    return i + 1
+
+PIVOT SELECTION STRATEGIES:
+--------------------------
+1. FIRST ELEMENT: Simple but can lead to worst-case performance
+2. LAST ELEMENT: Common choice, but same issues as first element
+3. MIDDLE ELEMENT: Often better balance
+4. RANDOM ELEMENT: Helps avoid worst-case scenarios
+5. MEDIAN OF THREE: Choose median of first, middle, and last elements
+6. MEDIAN OF MEDIANS: More complex but guarantees good pivot selection
+
+OPTIMIZATIONS:
+--------------
+1. HYBRID APPROACH: Use insertion sort for small sub-arrays (typically n < 10)
+2. TAIL RECURSION ELIMINATION: Reduce stack space usage
+3. THREE-WAY PARTITIONING: Handle duplicate elements efficiently (Dutch National Flag)
+4. MEDIAN PIVOT SELECTION: Improve worst-case performance
+5. RANDOMIZED QUICKSORT: Random pivot selection to avoid worst-case
+
+ADVANTAGES:
+-----------
+1. Excellent average-case performance O(n log n)
+2. In-place sorting (O(1) extra space)
+3. Cache-friendly (good locality of reference)
+4. Widely implemented and optimized
+5. Can be parallelized
+6. Works well with arrays
+7. Often faster than merge sort in practice
+
+DISADVANTAGES:
+--------------
+1. Worst-case O(n²) performance
+2. Not stable (relative order of equal elements may change)
+3. Performance depends on pivot selection
+4. Not suitable when worst-case performance must be guaranteed
+5. Recursive implementation uses O(log n) to O(n) stack space
+
+USE CASES:
+----------
+- Large datasets where average performance matters
+- General-purpose sorting in most programming languages
+- When in-place sorting is required
+- When cache performance is important
+- As the default sorting algorithm in many systems
+
+COMPARISON WITH OTHER SORTS:
+---------------------------
+- vs Merge Sort: Faster in practice but not stable, worst-case O(n²)
+- vs Heap Sort: Better average performance but worse worst-case
+- vs Insertion Sort: Much better for large arrays, worse for very small arrays
+- vs Bubble Sort: Dramatically better performance
+- vs Selection Sort: Much better performance
+
+IMPLEMENTATION CONSIDERATIONS:
+-----------------------------
+1. CHOOSE GOOD PIVOT: Median of three or random selection
+2. HANDLE SMALL ARRAYS: Use insertion sort for arrays < 10 elements
+3. AVOID WORST CASE: Use randomization or median selection
+4. STACK OVERFLOW: Consider iterative implementation for very large arrays
+5. DUPLICATES: Use three-way partitioning for arrays with many duplicates
+
+Quick Sort is the algorithm of choice for most general-purpose sorting needs due to its excellent average-case performance and in-place nature. However, consider merge sort when stability is required or when worst-case O(n log n) performance is essential.
